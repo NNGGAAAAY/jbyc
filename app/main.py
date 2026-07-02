@@ -222,7 +222,14 @@ class TorchRNNModel(torch.nn.Module):
 app = FastAPI(title="Anesthesia Complication ML Service", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://ojxdxcx.xyz",
+        "http://www.ojxdxcx.xyz",
+        "https://ojxdxcx.xyz",
+        "https://www.ojxdxcx.xyz",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -243,6 +243,14 @@
 .action-icon-button.danger-action{color:#b91c1c;border-color:#fecaca}
 .action-icon-button.danger-action:hover{background:#fef2f2;border-color:#fca5a5}
 .dataset-card-actions{display:flex;align-items:center;gap:10px;justify-content:flex-start;flex-wrap:nowrap}
+.dataset-card,.dataset-card-top,.dataset-kpis,.dataset-meta,.dataset-edit-form,.chip-list,.dataset-card-actions{min-width:0}
+.dataset-card .table-title{min-width:0;flex:1}
+.dataset-card .table-title strong{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dataset-card .status-pill{flex-shrink:0;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dataset-card .row-subtitle{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+.dataset-meta span{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip-list{max-width:100%;flex-wrap:wrap;overflow:visible}
+.chip-list span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:1100px){.metrics-grid.four{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.version-panel-head{flex-direction:column;align-items:flex-start}.dataset-card-actions{flex-wrap:wrap}}
 @media(max-width:480px){.metrics-grid.four{grid-template-columns:1fr}.dataset-card-actions{justify-content:space-between}}

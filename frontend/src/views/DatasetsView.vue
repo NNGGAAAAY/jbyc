@@ -44,6 +44,16 @@ function datasetTypeLabel(value) {
   return datasetTypeOptions.find((item) => item.value === value)?.label || value || '未分类'
 }
 
+function displaySourceName(item) {
+  const name = item.original_filename?.trim()
+  if (!name) return '未记录源文件名'
+  const isTempUploadName = /^[a-f0-9-]{24,}_temp_[a-f0-9]{24,}\.csv$/i.test(name)
+  if (isTempUploadName) {
+    return item.source_type === 'browser_upload' ? '浏览器上传 CSV' : '路径导入 CSV'
+  }
+  return name
+}
+
 async function importPath() {
   busy.value = true
   error.value = ''
@@ -174,7 +184,7 @@ async function saveEdit(item) {
             <span><HardDriveUpload :size="15" />{{ formatSize(item.file_size) }}</span>
           </div>
 
-          <p class="row-subtitle">{{ item.original_filename || '未记录源文件名' }}</p>
+          <p class="row-subtitle" :title="displaySourceName(item)">{{ displaySourceName(item) }}</p>
           <p class="row-subtitle">来源：{{ item.source_type === 'browser_upload' ? '浏览器上传' : '路径导入' }}</p>
 
           <div v-if="editingId === item.id" class="dataset-edit-form">
