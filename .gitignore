@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+test_anesthesia.db
+anesthesia_live.db
+node_modules/
+nginx-1.30.0/
+uploads/
+artifacts/
+catboost_info/
+frontend/node_modules/
+frontend/dist/

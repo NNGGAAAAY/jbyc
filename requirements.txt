@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+numpy
+scikit-learn
+xgboost
+catboost
+torch
+shap
+joblib
+sqlalchemy
+pymysql
+matplotlib
